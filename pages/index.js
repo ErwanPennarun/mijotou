@@ -14,9 +14,9 @@ export default function Home() {
         `http://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/`
       );
       const data = await res.json();
-      setRecipes(data);
     };
     const recipes = fetchData().catch(console.error);
+    setRecipes(recipes);
   }, []);
 
   return (
