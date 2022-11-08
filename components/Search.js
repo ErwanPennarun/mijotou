@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const getStaticProps = async () => {
   const res = await fetch(
-    `http://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/`
+    `https://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/`
   );
   const data = await res.json();
 
@@ -27,7 +27,7 @@ const Search = () => {
     setQuery(value);
     if (value.length > 2) {
       const res = await fetch(
-        `http://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/search/${value}`
+        `https://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/search/${value}`
       );
       const dataSearched = await res.json();
       setResults(dataSearched);
