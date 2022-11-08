@@ -2,22 +2,33 @@ import Image from "next/image";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-export default function Home() {
+export const getStaticProps = async () => {
+  const res = await fetch(
+    `http://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/`
+  );
+  const data = await res.json();
+
+  return {
+    props: { recipes: data },
+  };
+};
+
+export default function Home({ recipes }) {
   const [isInView, setIsInView] = useState(false);
-  const [recipes, setRecipes] = useState([]);
+  // const [recipes, setRecipes] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch(
-        `https://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/`
-      );
-      const data = await res.json();
-    };
-    const recipes = fetchData().catch(console.error);
-    setRecipes(recipes);
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const res = await fetch(
+  //       `https://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/`
+  //     );
+  //     const data = await res.json();
+  //   };
+  //   const recipes = fetchData().catch(console.error);
+  //   setRecipes(recipes);
+  // }, []);
 
   return (
     <>
