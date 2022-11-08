@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="http://localhost:8080/recettes" method="POST">
+      <input type="text" name="name" placeholder="name" />
+      <input type="text" name="author" placeholder="author" />
+      <input type="text" name="source_url" placeholder="source_url" />
+      <input type="text" name="img_url" placeholder="img_url" />
+      <input
+        type="text"
+        name="ingredients[][quantity]"
+        placeholder="quantity"
+      />
+      <input type="text" name="ingredients[][unit]" placeholder="unit" />
+      <input
+        type="text"
+        name="ingredients[][ingredients]"
+        placeholder="ingredients"
+      />
+      <input
+        type="text"
+        name="ingredients[][quantity]"
+        placeholder="quantity"
+      />
+      <input type="text" name="ingredients[][unit]" placeholder="unit" />
+      <input
+        type="text"
+        name="ingredients[][ingredients]"
+        placeholder="ingredients"
+      />
+      <input type="submit" />
+    </form>
+  </body>
+</html>

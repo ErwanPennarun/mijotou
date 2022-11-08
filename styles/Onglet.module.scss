@@ -1,0 +1,27 @@
+@import "../styles/globals.scss";
+
+.onglet__wrapper {
+  display: inline-block;
+  background-color: #fff;
+  color: #000;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  border-radius: 8px 8px 0 0;
+  padding: 10px 15px 15px 15px;
+  transform: translateY(8px);
+  transition: 0.3s ease;
+  margin-left: 5px;
+
+  &:hover {
+    transform: translateY(0);
+    background-color: $yellow;
+  }
+  .item_active {
+    transform: translateY(0);
+    background-color: $yellow;
+  }
+}
+.link {
+  color: #000;
+}
