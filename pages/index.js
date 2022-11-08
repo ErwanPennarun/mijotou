@@ -40,9 +40,8 @@ export default function Home({ recipes }) {
 
           <div className="gap-x-2 gap-y-8 grid lg:grid-cols-4 grid-cols-2 p-4">
             {recipes.splice(0, 4).map((recipe, index) => (
-              <div>
+              <div key={index}>
                 <Card
-                  key={index}
                   name={recipe.name}
                   image_url={recipe.img_url}
                   time={recipe.time}
