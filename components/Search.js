@@ -3,7 +3,9 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 export const getStaticProps = async () => {
-  const res = await fetch(`http://localhost:8080/recettes/`);
+  const res = await fetch(
+    `http://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/`
+  );
   const data = await res.json();
 
   return {
@@ -24,7 +26,9 @@ const Search = () => {
     const value = inputRef.current.value;
     setQuery(value);
     if (value.length > 2) {
-      const res = await fetch(`http://localhost:8080/recettes/search/${value}`);
+      const res = await fetch(
+        `http://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/search/${value}`
+      );
       const dataSearched = await res.json();
       setResults(dataSearched);
       console.log(results);
