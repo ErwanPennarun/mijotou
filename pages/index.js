@@ -31,7 +31,7 @@ export default function Home({ recipes }) {
   // }, []);
 
   return (
-    <>
+    <div>
       <div className="m-auto overflow-x-hidden">
         <div className="border-b border-black flex flex-col items-center">
           <h1 className="text-3xl lg:text-5xl lg:p-8 p-4">
@@ -40,14 +40,12 @@ export default function Home({ recipes }) {
 
           <div className="gap-x-2 gap-y-8 grid lg:grid-cols-4 grid-cols-2 p-4">
             {recipes.splice(0, 4).map((recipe, index) => (
-              <div key={index}>
-                <Card
-                  name={recipe.name}
-                  image_url={recipe.img_url}
-                  time={recipe.time}
-                  id={recipe._id}
-                />
-              </div>
+              <Card
+                name={recipe.name}
+                image_url={recipe.img_url}
+                time={recipe.time}
+                id={recipe._id}
+              />
             ))}
           </div>
           <Button link="/recettes" text="voir toutes les recettes" />
@@ -114,6 +112,6 @@ export default function Home({ recipes }) {
           <Button link="http://twitter.com" text="Fruits et légumes du mois" />
         </motion.div>
       </div>
-    </>
+    </div>
   );
 }
