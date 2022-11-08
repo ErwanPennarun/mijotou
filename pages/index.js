@@ -11,7 +11,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch(
-        `http://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/`
+        `https://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/`
       );
       const data = await res.json();
     };
