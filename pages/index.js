@@ -4,7 +4,7 @@ import Card from "../components/Card";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-export const getInitialProps = async () => {
+export const getStaticProps = async () => {
   const res = await fetch(
     `http://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/`
   );
