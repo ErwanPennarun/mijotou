@@ -3,9 +3,7 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 export const getStaticProps = async () => {
-  const res = await fetch(
-    `https://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/`
-  );
+  const res = await fetch(`https://mijotou-api.herokuapp.com/recettes`);
   const data = await res.json();
 
   return {
@@ -27,7 +25,7 @@ const Search = () => {
     setQuery(value);
     if (value.length > 2) {
       const res = await fetch(
-        `https://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/search/${value}`
+        `https://mijotou-api.herokuapp.com/recettes/search/${value}`
       );
       const dataSearched = await res.json();
       setResults(dataSearched);

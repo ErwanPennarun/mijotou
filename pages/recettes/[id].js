@@ -4,9 +4,7 @@ import { PlusCircleIcon, MinusCircleIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 
 export const getStaticPaths = async () => {
-  const res = await fetch(
-    "http://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes"
-  );
+  const res = await fetch("https://mijotou-api.herokuapp.com/recettes");
   const data = await res.json();
   const paths = data.map((rec) => {
     return {
@@ -22,9 +20,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const res = await fetch(
-    `http://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/${id}`
-  );
+  const res = await fetch(`https://mijotou-api.herokuapp.com/recettes/${id}`);
   const data = await res.json();
 
   return {

@@ -5,9 +5,7 @@ import { useState } from "react";
 import Filter from "../components/Filter";
 
 export const getStaticProps = async () => {
-  const res = await fetch(
-    `http://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/`
-  );
+  const res = await fetch(`https://mijotou-api.herokuapp.com/recettes`);
   const data = await res.json();
 
   return {

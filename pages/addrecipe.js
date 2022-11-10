@@ -29,7 +29,7 @@ const Addrecipe = () => {
   return (
     <>
       <form
-        action="http://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes"
+        action="https://mijotou-api.herokuapp.com/recettes"
         method="POST"
         className="flex flex-col gap-4 w-11/12 mx-auto overflow-x-hidden"
       >

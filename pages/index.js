@@ -22,9 +22,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(
-          `https://mijoutouapi-env.eba-btjfdght.eu-west-3.elasticbeanstalk.com/recettes/`
-        );
+        const res = await fetch(`https://mijotou-api.herokuapp.com/recettes`);
         const data = await res.json();
         setRecipes(data);
       } catch (err) {
