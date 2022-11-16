@@ -19,7 +19,7 @@ export default function Recettes({ recipes }) {
   const [activeFilter, setActiveFilter] = useState(null);
   const [mobileFilter, setMobileFilter] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(2);
+  const [postPerPage, setPostPerPage] = useState(10);
 
   const lastPostI = currentPage * postPerPage;
   const firstPostI = lastPostI - postPerPage;
