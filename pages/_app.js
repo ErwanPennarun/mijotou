@@ -12,10 +12,7 @@ function MyApp({ Component, pageProps, router }) {
 
   return (
     <Layout>
-      <AnimatePresence
-        exitBeforeEnter
-        onExitComplete={() => window.scrollTo(0, 0)}
-      >
+      <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
         <motion.div
           variants={variants}
           initial="hidden"

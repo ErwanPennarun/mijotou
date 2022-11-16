@@ -1,11 +1,11 @@
 import Card from "../components/Card";
+import Filter from "../components/Filter";
+
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-import Filter from "../components/Filter";
-
 export const getStaticProps = async () => {
-  const res = await fetch(`https://mijotou-api.herokuapp.com/recettes/`);
+  const res = await fetch(`https://mijotou-api.herokuapp.com/recettes`);
   const data = await res.json();
 
   return {

@@ -135,7 +135,7 @@ const Filter = ({
                 htmlFor={regime.label}
                 value={regime.label}
                 className={`hover:bg-yellow-400 w-full relative ${
-                  season.checked ? "bg-yellow-300" : ""
+                  regime.checked ? "bg-yellow-300" : ""
                 }`}
               >
                 <input

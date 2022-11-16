@@ -4,31 +4,31 @@ import Card from "../components/Card";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
-export const getStaticProps = async () => {
-  const res = await fetch(`https://mijotou-api.herokuapp.com/recettes/`);
-  const data = await res.json();
+// export const getStaticProps = async () => {
+//   const res = await fetch(`https://mijotou-api.herokuapp.com/recettes`);
+//   const data = await res.json();
 
-  return {
-    props: { recipes: data },
-  };
-};
+//   return {
+//     props: { recipes: data },
+//   };
+// };
 
 export default function Home() {
   const [isInView, setIsInView] = useState(false);
-  // const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const res = await fetch(`https://mijotou-api.herokuapp.com/recettes`);
-  //       const data = await res.json();
-  //       setRecipes(data);
-  //     } catch (err) {
-  //       console.error(err);
-  //     }
-  //   };
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(`https://mijotou-api.herokuapp.com/recettes`);
+        const data = await res.json();
+        setRecipes(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <div>
