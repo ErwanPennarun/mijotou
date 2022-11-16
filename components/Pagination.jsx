@@ -7,12 +7,12 @@ const Pagination = ({ postPerPage, totalPosts, setCurrentPage }) => {
     pageNumbers.push(i);
   }
   return (
-    <div>
+    <div className="flex justify-center">
       {pageNumbers.map((page, index) => {
         return (
           <button
             key={index}
-            className="mx-2"
+            className="mx-2 text-lg border border-black rounded-2xl px-2"
             onClick={() => {
               setCurrentPage(page), console.log(totalPosts, postPerPage);
             }}
