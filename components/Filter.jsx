@@ -33,7 +33,7 @@ const Filter = ({
     },
   ]);
 
-  const categories = ["Salé", "Sucré", "Boulangerie", "Sauces"];
+  const categories = ["Salé", "Sucré", "Boulangerie"];
 
   const handleCategory = (e) => {
     const value = e.target.id;

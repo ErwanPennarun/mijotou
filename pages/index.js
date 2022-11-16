@@ -39,7 +39,7 @@ export default function Home() {
           </h1>
 
           <div className="gap-x-2 gap-y-8 grid lg:grid-cols-4 grid-cols-2 p-4">
-            {recipes.splice(0, 4).map((recipe, index) => (
+            {recipes.splice(-4).map((recipe, index) => (
               <Card
                 key={index}
                 name={recipe.name}
