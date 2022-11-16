@@ -74,15 +74,15 @@ const Filter = ({
       setActiveFilter(category);
     }
 
-    // const regimeChecked = regimes
-    //   .filter((item) => item.checked)
-    //   .map((item) => item.label);
+    const regimeChecked = regimes
+      .filter((item) => item.checked)
+      .map((item) => item.label);
 
-    // if (regimeChecked.length) {
-    //   updatedList = updatedList.filter((el) =>
-    //     regimeChecked.every((x) => el.regime.includes(x))
-    //   );
-    // }
+    if (regimeChecked.length) {
+      updatedList = updatedList.filter((el) =>
+        regimeChecked.every((x) => el.regime.includes(x))
+      );
+    }
 
     const seasonsChecked = seasons
       .filter((item) => item.checked)
@@ -94,7 +94,8 @@ const Filter = ({
       );
     }
 
-    if (!seasonsChecked.length && !category) setRecipeFilter(recipes);
+    if (!seasonsChecked.length && !regimeChecked && !category)
+      setRecipeFilter(recipes);
     else setRecipeFilter(updatedList);
   };
 
@@ -128,18 +129,18 @@ const Filter = ({
       <div className="sticky top-0">
         {regimes.map((regime, index) => (
           <ul className="ml-2" key={index}>
-            <li>
+            <li className="flex ">
               <label
                 key={regime.id}
                 htmlFor={regime.label}
                 value={regime.label}
-                clasName={`relative  p-3 mr-1 mt-1 hover:bg-yellow-400 ${
-                  regime.checked ? "bg-yellow-300" : ""
+                className={`hover:bg-yellow-400 w-full relative ${
+                  season.checked ? "bg-yellow-300" : ""
                 }`}
               >
                 <input
                   type="checkbox"
-                  className=" group"
+                  className="absolute w-0 h-0"
                   checked={regime.checked}
                   value={regime.label}
                   onChange={() => handleChangeRegime(regime.id)}
