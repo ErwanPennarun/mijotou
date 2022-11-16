@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { PlusCircleIcon, MinusCircleIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import Recettes from "../recettes";
 
 export const getStaticPaths = async () => {
-  const res = await fetch("https://mijotou-api.herokuapp.com/recettes");
+  const res = await fetch("http://localhost:8080/recettes");
   const data = await res.json();
   const paths = data.map((rec) => {
     return {
@@ -20,7 +22,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const res = await fetch(`https://mijotou-api.herokuapp.com/recettes/${id}`);
+  const res = await fetch(`http://localhost:8080/recettes/${id}`);
   const data = await res.json();
 
   return {
@@ -39,7 +41,7 @@ const Recipe = ({ recipe }) => {
 
   const updateQuantity = (serving) => {
     const arr = ingQuantity.map((x) =>
-      Math.floor((x * serving) / recette.servings)
+      x !== 0 ? Math.floor((x * serving) / recette.servings) : x
     );
 
     setQuantity(arr);
@@ -60,6 +62,9 @@ const Recipe = ({ recipe }) => {
           />
         </div>
         <h1 className="uppercase text-center my-4 lg:my-11">{recette.name}</h1>
+        {recette.source_url && (
+          <Link href={recette.source_url}>par {recette.author}</Link>
+        )}
 
         <div className="grid grid-cols-3 gap-10">
           {recette.servings && (
