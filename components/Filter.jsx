@@ -51,7 +51,7 @@ const Filter = ({
     const changeCheckedregime = regimeState.map((item) =>
       item.id === id ? { ...item, checked: !item.checked } : item
     );
-
+    console.log(regimes);
     setRegime(changeCheckedregime);
   };
 
@@ -80,7 +80,7 @@ const Filter = ({
 
     if (regimeChecked.length) {
       updatedList = updatedList.filter((el) =>
-        regimeChecked.every((x) => el.regime.includes(x))
+        regimeChecked.every((x) => el.regimes.includes(x))
       );
     }
 
@@ -94,7 +94,7 @@ const Filter = ({
       );
     }
 
-    if (!seasonsChecked.length && !regimeChecked && !category)
+    if (!seasonsChecked.length && !regimeChecked.length && !category)
       setRecipeFilter(recipes);
     else setRecipeFilter(updatedList);
   };
@@ -126,7 +126,7 @@ const Filter = ({
 
   const regimeFilter = () => {
     return (
-      <div className="sticky top-0">
+      <div className="">
         {regimes.map((regime, index) => (
           <ul className="ml-2" key={index}>
             <li className="flex ">
@@ -142,10 +142,11 @@ const Filter = ({
                   type="checkbox"
                   className="absolute w-0 h-0"
                   checked={regime.checked}
+                  id={regime.label}
                   value={regime.label}
                   onChange={() => handleChangeRegime(regime.id)}
                 />
-                <span>{regime.name}</span>
+                <span>{regime.label}</span>
               </label>
             </li>
           </ul>

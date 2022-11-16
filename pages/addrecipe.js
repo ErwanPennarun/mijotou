@@ -42,7 +42,7 @@ const Addrecipe = () => {
 
         <input type="text" name="category[0]" placeholder="catégorie" />
         <div>
-          <input type="text" name="regimes[0]" placeholder="régime ?" />
+          <input type="text" name="regimes[0]" placeholder="regime" />
           <button onClick={handleRegime}>+</button>
           {Array.from(Array(regimeCounter)).map((c, index) => {
             return (

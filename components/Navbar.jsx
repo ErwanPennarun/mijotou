@@ -78,20 +78,14 @@ const Navbar = () => {
           </section>
           <ul className="hidden lg:flex items-center">
             <li className="m-8 text-xl group">
-              <Link
-                className="relative after:absolute after:content-[''] after:block after:w-0 after:h-px after:bg-[#ea5460] after:duration-300 group-hover:after:w-full group-hover:text-[#ea5460]"
-                href="/recettes"
-              >
-                recettes
-              </Link>
+              <div className="relative after:absolute after:content-[''] after:block after:w-0 after:h-px after:bg-[#ea5460] after:duration-300 group-hover:after:w-full group-hover:text-[#ea5460]">
+                <Link href="/recettes">recettes</Link>
+              </div>
             </li>
             <li className="m-8 text-xl group">
-              <Link
-                className="relative after:absolute after:content-[''] after:block after:w-0 after:h-px after:bg-[#ea5460] after:duration-300 group-hover:after:w-full group-hover:text-[#ea5460]"
-                href="/pratique"
-              >
-                pratique
-              </Link>
+              <div className="relative after:absolute after:content-[''] after:block after:w-0 after:h-px after:bg-[#ea5460] after:duration-300 group-hover:after:w-full group-hover:text-[#ea5460]">
+                <Link href="/pratique">pratique</Link>
+              </div>
             </li>
             <li className="m-8 text-xl">
               <Link href="/lapp" className="">

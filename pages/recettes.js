@@ -3,6 +3,7 @@ import Filter from "../components/Filter";
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Pagination from "../components/Pagination";
 
 export const getStaticProps = async () => {
   const res = await fetch(`https://mijotou-api.herokuapp.com/recettes`);
@@ -17,6 +18,12 @@ export default function Recettes({ recipes }) {
   const [recipeFilter, setRecipeFilter] = useState(recipes);
   const [activeFilter, setActiveFilter] = useState(null);
   const [mobileFilter, setMobileFilter] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage, setPostPerPage] = useState(2);
+
+  const lastPostI = currentPage * postPerPage;
+  const firstPostI = lastPostI - postPerPage;
+  const currentPost = recipeFilter.slice(firstPostI, lastPostI);
 
   return (
     <div className="">
@@ -63,7 +70,7 @@ export default function Recettes({ recipes }) {
             layout
             className="grid grid-cols-cards xl:gap-5 gap-2 my-4 mx-auto"
           >
-            {recipeFilter.map((recipe, index) => (
+            {currentPost.map((recipe, index) => (
               <Card
                 key={index}
                 name={recipe.name}
@@ -73,6 +80,13 @@ export default function Recettes({ recipes }) {
               />
             ))}
           </motion.div>
+          <div>
+            <Pagination
+              totalPosts={recipeFilter.length}
+              postPerPage={postPerPage}
+              setCurrentPage={setCurrentPage}
+            />
+          </div>
         </div>
         <div></div>
       </div>
