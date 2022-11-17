@@ -48,6 +48,7 @@ const Search = () => {
             ref={inputRef}
             onChange={handleSearch}
             onBlur={() => setFocus(false)}
+            onFocus={() => setFocus(true)}
             required
             placeholder="Rechercher une recette, un ingrédient..."
             name={query}
@@ -61,8 +62,8 @@ const Search = () => {
           />
 
           <div className="relative">
-            {results.length > 0 && (
-              <div className="bg-white text-black  translate-y-[5vh]  max-lg:-left-28 lg:-translate-y-6 lg:translate-x-0 lg:rounded-b-3xl absolute z-40 lg:top-6 border-b w-screen lg:border-r lg:border-l border-black lg:w-full flex flex-col drop-shadow">
+            {results.length > 0 && focus && (
+              <div className="bg-white text-black  translate-y-[5vh]  lg:left-0 -left-28 lg:-translate-y-6 lg:translate-x-0 lg:rounded-b-3xl absolute z-40 lg:top-6 border-b w-screen lg:border-r lg:border-l border-black lg:w-full flex flex-col drop-shadow">
                 <ul className="m-0 pt-4">
                   {results.map((value, key) => {
                     return (
