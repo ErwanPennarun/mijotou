@@ -7,7 +7,7 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     <>
-      <div className="height-[10vh] mx-auto mb-10 lg:w-11/12 pt-3 grid grid-cols-12 ">
+      <div className="height-[20vh] mx-auto mt-10 lg:w-11/12 pt-3 grid grid-cols-12 ">
         <div className="flex items-center lg:w-11/12 lg:ml-4 z-40 col-span-3 ">
           <Link href="/">
             <Image
