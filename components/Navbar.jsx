@@ -5,6 +5,7 @@ import Search from "./Search";
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+
   return (
     <>
       <div className="height-[20vh] mx-auto mt-10 lg:w-11/12 pt-3 grid grid-cols-12 ">
@@ -32,6 +33,7 @@ const Navbar = () => {
             <div
               className="space-y-1 z-40 cursor-pointer"
               onClick={() => setNavbarOpen((prev) => !prev)}
+              onBlur={() => setNavbarOpen((prev) => !prev)}
             >
               <span
                 className={`block h-0.5 w-7  rounded-xl bg-gray-600 ${
