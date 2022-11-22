@@ -1,35 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Mijotou ?
 
-## Getting Started
+Mijotou est un projet à intérêt personnel et à but absolument non-lucreatif, dont les raisons de la naissance sont simples :
 
-First, run the development server:
+- créer une application livre de recettes et de partager avec mes amis et camarades les plats que j'aime faire;
+- avoir un projet pour tester Next.JS, Mongoose, et tester un peu la création d'API.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Les choses qui manquent
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Trois onglets dans le menu, une seule de dispo : il manque évidemment des fonctionnalités (toujours personnelles) : une page avec tous les aspects pratiques de la cuisine, type légumes/fruits du mois, certaines cuissons... et une application mobile, basée sur React Native probablement, pour rendre le tout encore plus facile à réaliser.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Comment l'utiliser ?
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# mijotou
+Simplement en utilisant le système de recherche ou en cliquant sur l'onglet "recettes", et en filtrant au besoin.

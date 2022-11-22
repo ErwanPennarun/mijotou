@@ -2,9 +2,15 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Search from "./Search";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const router = useRouter();
+
+  const showNavBar = () => {
+    setNavbarOpen(!navbarOpen);
+  };
 
   return (
     <>
@@ -29,12 +35,8 @@ const Navbar = () => {
         </div>
 
         <div className="flex w-full justify-end items-center col-span-3 col-start-10 ">
-          <section className="flex mr-6 lg:hidden">
-            <div
-              className="space-y-1 z-40 cursor-pointer"
-              onClick={() => setNavbarOpen((prev) => !prev)}
-              onBlur={() => setNavbarOpen((prev) => !prev)}
-            >
+          <section className="flex mr-6 lg:hidden ">
+            <div className="space-y-1 z-40 cursor-pointer" onClick={showNavBar}>
               <span
                 className={`block h-0.5 w-7  rounded-xl bg-gray-600 ${
                   navbarOpen
@@ -57,22 +59,34 @@ const Navbar = () => {
             </div>
 
             <div
-              className={`block absolute w-full h-auto top-0 left-0 bg-white z-10 flex drop-shadow-md ${
+              className={`block absolute w-full h-auto top-0 left-0 bg-white z-20 flex drop-shadow-md ${
                 navbarOpen
                   ? "translate-y-0 duration-500 ease-in-out "
-                  : "absolute translate-y-[-600px] duration-500"
+                  : "absolute -translate-y-[100vh] duration-500"
               }`}
             >
-              <div className="w-full">
+              <div className="w-full h-screen">
                 <ul className="flex flex-col items-center justify-around min-h-[600px]">
-                  <li className="border-b border-gray-400 my-8 uppercase">
-                    <Link href="/recettes">Recette</Link>
+                  <li className="border-b border-gray-400 my-24 uppercase">
+                    <a
+                      href="/recettes"
+                      onClick={() => router.push("/recettes")}
+                    >
+                      Recette
+                    </a>
                   </li>
                   <li className="border-b border-gray-400 my-8 uppercase">
-                    <Link href="/pratique">Pratique</Link>
+                    <a
+                      href="/pratique"
+                      onClick={() => router.push("/pratique")}
+                    >
+                      Pratique
+                    </a>
                   </li>
                   <li className="bg-red-400 text-white my-8 uppercase inline-block px-9 py-2">
-                    <Link href="/app">L&apos;app</Link>
+                    <a href="/lzapp" onClick={() => router.push("/lapp")}>
+                      L&apos;app
+                    </a>
                   </li>
                 </ul>
               </div>

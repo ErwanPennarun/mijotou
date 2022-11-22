@@ -44,7 +44,7 @@ export default function Recettes({ recipes }) {
           />
         </div>
         <div
-          className={`fixed lg:hidden bg-main-red text-lg font-medium bottom-40 text-white z-30 p-3 ${
+          className={`fixed lg:hidden bg-main-red text-lg font-medium bottom-40 text-white z-10 p-3 ${
             mobileFilter
               ? "rounded-l-lg transform right-0 duration-300 ease-in-out"
               : " left-0 rounded-r-lg duration-300 ease-in-out pr-24"
